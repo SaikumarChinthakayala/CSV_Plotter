@@ -58,7 +58,8 @@ where python
 )
 In the automator app, 
 ```bash
-$(which python) main.py ```)
+$(which python) main.py ```
+)
 one could have this command and this creates an application file which can be placed on the dock with a fancy icon of your choice
 Example looks like :
 ![alt text](https://github.com/SaikumarChinthakayala/CSV_Plotter/blob/master/examples/ex1.png)
