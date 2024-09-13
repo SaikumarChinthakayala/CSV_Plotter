@@ -1,0 +1,4 @@
+pandas
+pyqtgraph
+PyQt6
+
