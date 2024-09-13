@@ -19,7 +19,7 @@ Before installing, ensure you have the following:
 First, download the project by cloning the repository from GitHub or manually downloading it.
 
 ```bash
-git clone https://github.com/your-repository/csv-plotter.git
+git clone https://github.com/SaikumarChinthakayala/CSV_Plotter.git
 cd csv-plotter
 python3 -m venv venv
 source venv/bin/activate   # On Windows, use venv\Scripts\activate
