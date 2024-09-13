@@ -7,8 +7,8 @@ A Python applet for plotting CSV data with PyQt6 and pyqtgraph. Allows users to 
 To install the package, run:
 
 ```bash
-pip install .
-
+pip install
+``` 
 
 Example looks like :
-#![alt text]()
+#![alt text](https://github.com/SaikumarChinthakayala/CSV_Plotter/blob/master/examples/ex1.png)
