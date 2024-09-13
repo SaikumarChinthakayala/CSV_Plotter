@@ -48,6 +48,17 @@ Run the .sh file :
 ```
 
 Or a desktop shortcut can be created to this .sh file
-
+### 3. Mac Application
+If the user is on Mac OSX, an automator script to run the python script can be setup. 
+It is not as straight forward copy pasting the same terminal command. The automator script also needs the python binary installation
+location (can be obtained using:
+```bash
+where python
+```
+)
+In the automator app, 
+```bash
+$(which python) main.py ```)
+one could have this command and this creates an application file which can be placed on the dock with a fancy icon of your choice
 Example looks like :
 ![alt text](https://github.com/SaikumarChinthakayala/CSV_Plotter/blob/master/examples/ex1.png)
