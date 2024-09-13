@@ -11,4 +11,4 @@ pip install
 ``` 
 
 Example looks like :
-#![alt text](https://github.com/SaikumarChinthakayala/CSV_Plotter/blob/master/examples/ex1.png)
+![alt text](https://github.com/SaikumarChinthakayala/CSV_Plotter/blob/master/examples/ex1.png)
