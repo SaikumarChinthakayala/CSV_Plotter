@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
 import pyqtgraph as pg
-from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton, QFileDialog, QLabel, QComboBox, QSpinBox
+from PyQt6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton, QFileDialog, QLabel, QComboBox, QSpinBox, QLineEdit
 
 class CSVPlotter(QMainWindow):
     def __init__(self):
@@ -18,6 +18,11 @@ class CSVPlotter(QMainWindow):
         self.load_button = QPushButton('Open CSV')
         self.load_button.clicked.connect(self.open_csv)
         self.layout.addWidget(self.load_button)
+
+        # Text field to display the full path of the opened CSV
+        self.file_path_line_edit = QLineEdit()
+        self.file_path_line_edit.setReadOnly(True)
+        self.layout.addWidget(self.file_path_line_edit)
 
         self.x_axis_combo = QComboBox()
         self.y_axis_combo = QComboBox()
@@ -54,6 +59,7 @@ class CSVPlotter(QMainWindow):
     def open_csv(self):
         file_name, _ = QFileDialog.getOpenFileName(self, "Open CSV File", "", "CSV Files (*.csv);;All Files (*)")
         if file_name:
+            self.file_path_line_edit.setText(file_name)  # Set file path in the QLineEdit
             self.df = pd.read_csv(file_name)
             self.update_column_selections()
             self.plot_data()
@@ -80,6 +86,10 @@ class CSVPlotter(QMainWindow):
                 self.plot_widget.plot(x_data, y_data, pen=None, symbol='o', symbolSize=point_size)
             elif graph_type == 'Line':
                 self.plot_widget.plot(x_data, y_data, pen=pg.mkPen(width=line_width))
+
+        # Set the labels for the X and Y axes
+        self.plot_widget.setLabel('bottom', x_col)  # X-axis label
+        self.plot_widget.setLabel('left', y_col)    # Y-axis label
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
